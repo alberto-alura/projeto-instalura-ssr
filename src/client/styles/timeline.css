@@ -1,0 +1,241 @@
+:global html {
+  height: 100%;
+}
+
+:global body {
+  padding-top: 7vh;
+  background: #fafafa;
+  position: relative;
+  height: 100%;
+}
+
+
+:global .container {
+  padding: 0 10%;
+}
+
+/****/
+
+:global .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 7vh;
+  border-bottom: 2px solid #aaa;
+  position: fixed;
+  top: 0;
+  width: 80%;
+  flex-basis: 100%;
+  background: #fff;
+  backface-visibility: hidden;
+}
+
+:global .header-logo {
+  background: url(../images/logo-instalura.svg) no-repeat left;
+  height: 1em;
+  padding-left: 1.5em;
+  padding-bottom: .2em;
+  filter: hue-rotate(80deg);
+  transition: .4s;
+}
+
+:global .header-logo:hover{
+  filter: hue-rotate(0);
+}
+
+:global .header-busca-campo {
+  padding: .5em;
+  margin-left: 1em;
+  background: #fafafa;
+  border: 1px solid #dbdbdb;
+  color: #262626;
+}
+
+:global .header-busca-campo:focus {
+  background: #fff;
+  outline: 1px solid #ccc;
+  color: #222;
+}
+
+:global .header-busca-submit {
+  border: 0;
+  background: url(../images/busca-icone.png) center center no-repeat #069;
+  text-indent: -9999px;
+  overflow: hidden;
+  background-size: 20px;
+  color: #fff;
+  min-width: 32px;
+  height: 2.4em;
+  transition: .4s;
+}
+
+:global .header-busca-submit:hover {
+  background-color: #5ad4c9;
+}
+
+:global .header-nav {
+  list-style: none
+}
+
+:global .header-nav-item a {
+  text-decoration: none;
+  color: #069;
+  font-size: 3em;
+}    
+
+:global .header-nav-item a:hover{
+  color: #5ad4c9;
+}
+
+/*******/
+
+
+:global .foto {
+  background-color: #fff;
+  border: 1px solid #efefef;
+  border-radius: 3px;
+  max-width: 550px;
+  margin: 2em auto;
+  
+}
+
+:global .foto-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2%;
+}
+
+
+:global .foto-usuario {
+  display: flex;
+  align-items: center;
+  width: 10%;
+  margin-left: 0;
+  font-weight: bold;
+}
+
+:global .foto-usuario a {
+  text-decoration: none;
+  color: #069;
+}
+
+:global .foto-usuario img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: .7em;
+}
+
+:global .foto-data {
+  color: #999;
+}
+
+:global .foto-src {
+  max-width: 100%;
+}
+
+/*****/
+
+
+:global .foto-info {
+  padding: 1em;
+}
+
+:global .foto-info-likes {
+  list-style: none;
+}
+
+:global .foto-info-likes a {
+  text-decoration: none;
+  color: #069;
+  font-weight: bold;
+}
+
+:global .foto-info-likes li {
+  display: inline-block;
+}
+
+:global .foto-info-autor {
+  font-weight: bold;
+}
+
+
+:global .foto-info-comentarios {
+  list-style: none;
+  padding: 0;
+  line-height: 1.2;
+  border-bottom: 1px solid #efefef;
+  padding-bottom: 1em;
+}
+
+:global .comentario {
+  margin-bottom: .6em;
+}
+
+
+/*****/
+
+:global .fotoAtualizacoes {
+  display: flex;
+  padding: 0 1em 1em 1em;
+}
+
+:global .fotoAtualizacoes-like {
+  background: url(../images/s2.png) no-repeat center center;
+  background-size: 32px 32px;
+  width: 44px;
+  height: 44px;
+  text-indent: -9999px;
+  display: inline-block;
+  transition: .4s;
+  margin-right: 1em;
+}
+
+:global .fotoAtualizacoes-like-ativo {
+  background: url(../images/s2-check.png) no-repeat center center;
+  background-size: 32px 32px;
+  width: 44px;
+  height: 44px;
+  text-indent: -9999px;
+  display: inline-block;
+  transition: .4s;
+  margin-right: 1em;
+}
+
+:global .fotoAtualizacoes-form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+:global .fotoAtualizacoes-form-campo {
+  border: 0;
+  outline: 0;
+  width: 60%;
+}
+
+:global .fotoAtualizacoes-form-submit {
+  border: 0;
+  background-color: #069;
+  color: #fff;
+  height: 2.4em;
+}
+
+:global .timeline-enter {
+  opacity: 0.01;
+}
+
+:global .timeline-enter.timeline-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+:global .timeline-leave {
+  opacity: 1;
+}
+
+:global .timeline-leave.timeline-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}      

@@ -1,56 +1,23 @@
-import React, {PropTypes} from "react";
-import {connect} from "react-redux";
-/**/
-import {toggleCheck, incNumber, decNumber} from "../actions";
+import React, { Component } from 'react';
+import Header from './Header';
+import Timeline from './Timeline';
 
-class Home extends React.Component {
-  render() {
-    const props = this.props;
-    const {checked, value} = props;
+
+class Home extends Component {
+  render() {    
     return (
-      <div>
-        {/**/}
-        <h1>Hello <a href={"https://github.com/electrode-io"}>{"Electrode"}</a></h1>
-        <div>
-          <h2>Managing States with Redux</h2>
-          <label>
-            <input onChange={props.onChangeCheck} type={"checkbox"} checked={checked}/>
-            Checkbox
-          </label>
-          <div>
-            <button type={"button"} onClick={props.onDecrease}>-</button>
-            &nbsp;{value}&nbsp;
-            <button type={"button"} onClick={props.onIncrease}>+</button>
-          </div>
-        </div>
+    <div id="root">
+      <div className="main">
+        <Header store={this.context.store}/>
+        <Timeline login={this.props.params.login}/>
       </div>
+    </div>
     );
   }
 }
 
-Home.propTypes = {
-  checked: PropTypes.bool,
-  value: PropTypes.number.isRequired
-};
+Home.contextTypes = {
+  store : React.PropTypes.object.isRequired
+}
 
-const mapStateToProps = (state) => {
-  return {
-    checked: state.checkBox.checked, value: state.number.value
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onChangeCheck: () => {
-      dispatch(toggleCheck());
-    },
-    onIncrease: () => {
-      dispatch(incNumber());
-    },
-    onDecrease: () => {
-      dispatch(decNumber());
-    }
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;
