@@ -29,6 +29,7 @@ export default class Login extends Component {
             })
             .then(token => {
                 localStorage.setItem('auth-token',token);
+                document.cookie = `auth-token=${token}`;
                 browserHistory.push('/timeline');
             })
             .catch(error => {
