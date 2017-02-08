@@ -1,4 +1,5 @@
 import {listagem,comentario,like,notifica} from '../actions/actionCreator';
+import 'isomorphic-fetch';
 
 export default class TimelineApi {
     static lista(urlPerfil){
