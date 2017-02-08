@@ -4,13 +4,21 @@
 
 import ReduxRouterEngine from "electrode-redux-router-engine";
 import {routes} from "../../client/routes";
-import {createStore} from "redux";
+import {createStore,applyMiddleware} from "redux";
 import rootReducer from "../../client/reducers";
-
-const Promise = require("bluebird");
+import thunkMiddleware from 'redux-thunk';
+import TimelineApi from '../../client/logicas/TimelineApi';
 
 function createReduxStore(req, match) { // eslint-disable-line
-  return null;
+  const estadoInicial = {
+    timeline : [],
+    notificacao : ''
+  }
+  const store = createStore(rootReducer,estadoInicial,applyMiddleware(thunkMiddleware));
+
+  const promise = store.dispatch(TimelineApi.lista(`http://localhost:8080/api/fotos?X-AUTH-TOKEN=${req.state['auth-token']}`));  
+
+  return promise.then(() => store);
 }
 
 //

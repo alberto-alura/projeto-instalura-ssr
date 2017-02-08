@@ -3,7 +3,7 @@ import {listagem,comentario,like,notifica} from '../actions/actionCreator';
 export default class TimelineApi {
     static lista(urlPerfil){
       return dispatch => {
-        fetch(urlPerfil)
+        return fetch(urlPerfil)
         .then(response => response.json())
         .then(fotos => {    
             dispatch(listagem(fotos));
